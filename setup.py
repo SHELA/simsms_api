@@ -1,9 +1,9 @@
 import os
 import setuptools
 
-import sms_area_api
+import simsms_api
 
-packages = ["sms_area_api"] # Название плагина
+packages = ["simsms_api"] # Название плагина
 
 
 
@@ -17,9 +17,9 @@ else:
 
 
 setuptools.setup(
-    name=sms_area_api.name,
-    version=sms_area_api.__version__,
-    author=sms_area_api.__author__,
+    name=simsms_api.name,
+    version=simsms_api.__version__,
+    author=simsms_api.__author__,
     author_email="strelok.127@yandex.ru",
     packages=packages,
     include_package_data=True,
@@ -36,5 +36,5 @@ setuptools.setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    project_urls={"Source": sms_area_api.__source__},
+    project_urls={"Source": simsms_api.__source__},
 )
