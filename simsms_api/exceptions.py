@@ -1,8 +1,10 @@
 class ApiError(Exception):
     pass
 
+
 class InvalidService(Exception):
-	pass
+    pass
+
 
 class InvalidCountry(Exception):
-	pass
+    pass

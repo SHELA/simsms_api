@@ -1,6 +1,12 @@
 # [SIMSMS](https://simsms.org)
 Официальная [документация](https://simsms.org/new_theme_api.html)
 
+[![Build Status](https://travis-ci.com/daveusa31/simsms_api.svg?branch=master)](https://travis-ci.com/daveusa31/simsms_api)
+[![PyPi Package Version](https://img.shields.io/pypi/v/simsms_api.svg?style=flat-square)](https://pypi.python.org/pypi/simsms_api)
+[![PyPi status](https://img.shields.io/pypi/status/simsms_api.svg?style=flat-square)](https://pypi.python.org/pypi/simsms_api)
+[![Downloads](https://pepy.tech/badge/simsms_api)](https://pepy.tech/project/simsms_api)
+[![Supported python versions](https://img.shields.io/pypi/pyversions/simsms_api.svg?style=flat-square)](https://pypi.python.org/pypi/simsms_api)
+
 
 
 ## Установка и использование:
