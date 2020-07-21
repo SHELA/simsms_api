@@ -22,29 +22,29 @@ tg = simsms_api.services.Telegram # Telegram
 aviable_numbers = sms.aviable_numbers("ru", service=tg)["total"]
 
 if 0 < aviable_numbers:
-	print("Есть {} доступных номеров".format(aviable_numbers))
+    print("Есть {} доступных номеров".format(aviable_numbers))
 
-	balance = sms.balance()
-	tg_price = sms.get_service_price("ru", service=tg)
+    balance = sms.balance()
+    tg_price = sms.get_service_price("ru", service=tg)
 
 
-	if balance >= tg_price:
-		print("Денег хватает")
-		activate = sms.get_number("ru", service=tg)
-		print(activate)
-		input("Нажмите inter, когда отправите смс")
-		while True:
-			order = sms.get_sms("ru", activate["id"], service=tg)
-			if None != order["text"]:
-				print(order["text"])
-				break
-		
-	else:
-		text = "У вас на балансе {} руб, а активация стоит {} руб"
-		text = text.format(balance, price)
-		print(text)
+    if balance >= tg_price:
+        print("Денег хватает")
+        activate = sms.get_number("ru", service=tg)
+        print(activate)
+        input("Нажмите inter, когда отправите смс")
+        while True:
+            order = sms.get_sms("ru", activate["id"], service=tg)
+            if None != order["text"]:
+                print(order["text"])
+                break
+        
+    else:
+        text = "У вас на балансе {} руб, а активация стоит {} руб"
+        text = text.format(balance, price)
+        print(text)
 else:
-	print("Нет доступных номеров")
+    print("Нет доступных номеров")
 ```
 
 
