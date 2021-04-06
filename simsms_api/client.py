@@ -1,6 +1,5 @@
 import time
 import requests
-import transliterate
 
 
 from . import exceptions
@@ -180,13 +179,16 @@ class SimSms:
     ]
     __last_request_from_get_sms = 0
 
-    def __init__(self, api_key):
+    def __init__(self, api_key, api_url=None):
         """
         Параметры:
             api_key : str
                 Ваш api ключ со страницы https://simsms.org/user/
+            api_url : str. Если другая платформа
         """
         self.api_key = api_key
+        if api_url is not None:
+            self.__API_URL = api_url
 
     def balance(self):
         """
@@ -333,7 +335,6 @@ class SimSms:
             response = response.json()
         except:
             error_text = response.text
-            error_text = transliterate.translit(error_text, "ru", reversed=True)
             raise exceptions.ApiError(error_text)
 
         if "response" in response:
