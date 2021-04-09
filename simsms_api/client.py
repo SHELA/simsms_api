@@ -287,7 +287,7 @@ class SimSms:
         }
         return self.__request(params)
 
-    def get_proverka(sefl, number: int, service="any"):
+    def get_proverka(self, number: int, service="any"):
         params = {
             "metod": "get_proverka",
             "service": service,
