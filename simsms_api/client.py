@@ -225,12 +225,15 @@ class SimSms:
         }
         return float(self.__request(params)["price"])
 
-    def get_number(self, country: str, service="any"):
+    def get_number(self, country: str, service="any", used_number=None):
         params = {
             "metod": "get_number",
             "service": service,
             "country": country,
         }
+        if used_number:
+           params["number"] = used_number
+        print(params)      
         response = self.__request(params)
 
         number = response["number"]
@@ -261,7 +264,7 @@ class SimSms:
         }
         if one_more:
            params["sms"] = "sms" 
-            
+        print(params)        
 
         self.__last_request_from_get_sms = time.time()
 
