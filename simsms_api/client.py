@@ -247,7 +247,7 @@ class SimSms:
         }
         return self.__request(params)
 
-    def get_sms(self, country: str, order_id: int, service="any"):
+    def get_sms(self, country: str, order_id: int, service="any", one_more=False):
         if self.__last_request_from_get_sms > time.time() - 30:
             need_sleep = 30 - (time.time() - self.__last_request_from_get_sms)
             print(need_sleep)
@@ -259,6 +259,9 @@ class SimSms:
             "country": country,
             "id": int(order_id),
         }
+        if one_more:
+           params["sms"] = "sms" 
+            
 
         self.__last_request_from_get_sms = time.time()
 
